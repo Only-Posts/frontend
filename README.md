@@ -1,24 +1,13 @@
 # onlyposts
 
-## Project setup
+## Предназначение
+
 ```
-npm install
+Репозиторий создан для фронтовой части веб приложения OnlyPosts
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## История (только крупные коммиты)
 
-### Compiles and minifies for production
 ```
-npm run build
+Добавлен прототип для страницы авторизации
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
