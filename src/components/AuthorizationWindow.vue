@@ -2,9 +2,18 @@
     <div id="main">
         <div id="name">Авторизация</div>
         <div id="fields">
-        <div id="login"></div>
-        <div id="email"></div>
-        <div id="password"></div>
+        <div id="login">
+          <div class="fieldName">Имя пользователя</div>
+          <div class="input"><input type="text"></div>
+        </div>
+        <div id="email">
+          <div class="fieldName">Email</div>
+          <div class="input"><input type="email"></div>
+        </div>
+        <div id="password">
+          <div class="fieldName">Пароль</div>
+          <div class="input"><input type="password"></div>
+        </div>
         </div>
         <div id="enter"><button>Войти</button></div>
     </div>
@@ -19,9 +28,9 @@
 <style scoped>
 #main {
     /*Расположение самого элемента*/
-    margin: 50px;
-    min-width: 652px;
-    max-width: 660px;
+    margin: 40px 0px;
+
+    /*width: ;*/
     border-radius:28px;
     grid-column: 2;
     grid-row: 1/4;
@@ -33,12 +42,13 @@
 
     /*Стиль элемента*/
     background: rgba(251,251,251,0.12);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
 }
 
 #name{
     /*Расположение самого элемента*/
     grid-column: 1;
+    grid-row: 1;
     /*margin: 50px 50px 10px 50px;*/ /*Возможно не нужно*/
 
 
@@ -54,8 +64,81 @@
     color:white;
 }
 
+#fields{
+  /*Расположение самого элемента*/
+  margin: 30px;
+  grid-column: 1;
+  grid-row: 2;
+
+  /*Расположение внутри элемента*/
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  /*Стиль элемента*/
+}
+
+  /*Общие параметры*/
+.fieldName{
+  color: white;
+}
+
+.input > input{
+  /*Расположение самого элемента*/
+  margin: 15px 0px;
+
+  /*Расположение внутри элемента*/
+  text-indent: 10px;
+
+
+  /*Стиль элемента*/
+  width: 100%;
+  height: 30px;
+  background-color: rgba(251,251,251,0);
+  border: solid 2px rgba(251,251,251,0.12);
+  border-radius: 20px;
+  outline: none;
+  color: rgb(251,251,251);
+}
+
+  /*Часные параметры*/
+#login{
+  /*Расположение самого элемента*/
+  grid-column: 1;
+  grid-row: 1;
+
+  /*Расположение внутри элемента*/
+
+
+  /*Стиль элемента*/
+}
+
+#email{
+  /*Расположение самого элемента*/
+  grid-column: 1;
+  grid-row: 2;
+
+  /*Расположение внутри элемента*/
+
+
+  /*Стиль элемента*/
+}
+
+#password{
+  /*Расположение самого элемента*/
+  grid-column: 1;
+  grid-row: 3;
+
+  /*Расположение внутри элемента*/
+
+
+  /*Стиль элемента*/
+}
+
 #enter{
     /*Расположение самого элемента*/
+    grid-column: 1;
+    grid-row: 3;
     margin: 10px 50px 50px 50px;
 
     /*Расположение внутри элемента*/
@@ -89,6 +172,9 @@
 
 
 <!--/*Стиль элемента*/-->
+
+
+<!--TODO: сделать адаптивный дизайн, чтобы при уменьшении окна оно переходило в другой вид-->
 
 
 

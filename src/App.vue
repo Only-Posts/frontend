@@ -33,6 +33,7 @@ body{
 
   /*Стиль элемента*/
   background-repeat: no-repeat;
+  background-size: cover;
   background-image: url("./assets/authBG.png");
   background-position: center;
 }
