@@ -29,8 +29,7 @@
 #main {
     /*Расположение самого элемента*/
     margin: 40px 0px;
-
-    /*width: ;*/
+    min-width: 300px;
     border-radius:28px;
     grid-column: 2;
     grid-row: 1/4;
@@ -139,7 +138,7 @@
     /*Расположение самого элемента*/
     grid-column: 1;
     grid-row: 3;
-    margin: 10px 50px 50px 50px;
+    margin: 10px 25px 50px 50px;
 
     /*Расположение внутри элемента*/
     display: grid;

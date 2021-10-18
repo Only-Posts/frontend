@@ -1,11 +1,9 @@
 <template>
-  <AuthorizationWindow>
-    <div id="example">Example</div>
-  </AuthorizationWindow>
+  <AuthorizationWindow/>
 </template>
 
 <script>
-import AuthorizationWindow from "@/components/AuthorizationWindow";
+import AuthorizationWindow from "@/components/AuthorizationWindow.vue";
 
 export default {
   name: 'App',
@@ -24,6 +22,7 @@ body{
 #app {
   /*Расположение самого элемента*/
   height: 100vh;
+  min-height: 600px;
   margin:0;
 
   /*Расположение внутри элемента*/
