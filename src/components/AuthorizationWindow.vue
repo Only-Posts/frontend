@@ -1,4 +1,5 @@
 <template>
+  <div id="bg">
     <div id="main">
         <div id="name">Авторизация</div>
         <div id="fields">
@@ -17,6 +18,7 @@
         </div>
         <div id="enter"><button>Войти</button></div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -26,6 +28,24 @@
 </script>
 
 <style scoped>
+#bg {
+  /*Расположение самого элемента*/
+  height: 100vh;
+  min-height: 600px;
+  margin:0;
+
+  /*Расположение внутри элемента*/
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+
+  /*Стиль элемента*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/authBG.png");
+  background-position: center;
+}
+
 #main {
     /*Расположение самого элемента*/
     margin: 40px 0px;
@@ -41,7 +61,7 @@
 
     /*Стиль элемента*/
     background: rgba(251,251,251,0.12);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(18px);
 }
 
 #name{
@@ -92,7 +112,7 @@
 
   /*Стиль элемента*/
   width: 100%;
-  height: 30px;
+  height: 42px;
   background-color: rgba(251,251,251,0);
   border: solid 2px rgba(251,251,251,0.12);
   border-radius: 20px;

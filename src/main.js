@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 // import Vue from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+createApp(App).mount('body')
 
 // App.config.ignoredElements = [/^app-/]
 // App.use(/* ... */)
