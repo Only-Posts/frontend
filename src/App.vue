@@ -22,4 +22,10 @@ body{
   height: 100vh;
   background: #0c0c0c;
 }
+button{
+  background: #67204c;
+  color: rgb(251,251,251);
+  border-radius: 20px;
+  border-style: none;
+}
 </style>

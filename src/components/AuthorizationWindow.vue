@@ -172,10 +172,6 @@
 
 #enter > button{
     /*Стиль элемента*/
-    background: #67204c;
-    color: rgb(251,251,251);
-    border-radius: 20px;
-    border-style: none;
     width: 115px;
     height: 45px;
 

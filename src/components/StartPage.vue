@@ -2,10 +2,17 @@
 <div id="bg">
   <div id="upLine">ONLYPOSTS</div>
   <div id="buttons">
-    <button id="">Зарегистрироваться</button>
-    <button>Войти</button>
+    <button id="logIn">Зарегистрироваться</button>
+    <button id="signIn">Войти</button>
   </div>
-  <div id="dscr"></div>
+  <div id="dscr">
+    <div id="h1">Что такое ONLYPOSTS?</div>
+    <div id="main">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac lorem odio. Sed luctus est odio, eget malesuada orci venenatis sed. Etiam mollis sollicitudin consectetur.</p>
+      <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse scelerisque volutpat sodales.</p>
+    </div>
+  </div>
+  <div id="grayLine"></div>
   <div id="animation"></div>
   <div id="downLine"></div>
 </div>
@@ -21,7 +28,6 @@ export default {
 #bg {
   /*Расположение самого элемента*/
   height: 100vh;
-  min-height: 600px;
   margin:0;
 
   /*Расположение внутри элемента*/
@@ -36,7 +42,7 @@ export default {
   /*background-position: center;*/
 }
 
-#upLine, #downLine{
+#upLine, #downLine, #grayLine{
   /*Расположение внутри элемента*/
   text-indent: 6%;
   display: grid;
@@ -62,21 +68,69 @@ export default {
   /*Расположение самого элемента*/
   grid-column: 2;
   grid-row: 3;
+  margin-left: 4%;
 
   /*Стиль элемента*/
   border-top: solid 4px #661c49;
 }
 
+#grayLine{
+  /*Расположение самого элемента*/
+  grid-column: 1;
+  grid-row: 3;
+
+  /*Стиль элемента*/
+  border-top: solid 4px #1c1c1c;
+}
+
 #buttons{
   /*Расположение самого элемента*/
+  margin-right: 3%;
   grid-column: 2;
   grid-row: 1;
 
   /*Расположение внутри элемента*/
   display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  justify-content: space-around;
   justify-items: end;
-  align-items: center;
+  align-items: end;
 
+  /*Стиль элемента*/
+}
+
+#logIn, #signIn{
+  height: 35px;
+}
+#logIn{
+  width: 155px;
+}
+#signIn{
+  width: 75px;
+}
+
+#dscr{
+  /*Расположение самого элемента*/
+  margin-top: 4%;
+
+  /*Расположение внутри элемента*/
+
+
+  /*Стиль элемента*/
+  color:white;
+  background-color: #1c1c1c;
+}
+#h1{
+  /*Расположение самого элемента*/
+  margin: 10px;
+  /*Стиль элемента*/
+  text-align: center;
+  font-size: 1.5em;
+}
+#main{
+  /*Расположение самого элемента*/
+  margin: 10px;
   /*Стиль элемента*/
 }
 
