@@ -91,22 +91,35 @@ export default {
 
   /*Расположение внутри элемента*/
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr;
-  justify-content: space-around;
   justify-items: end;
   align-items: end;
-
   /*Стиль элемента*/
 }
 
 #logIn, #signIn{
   height: 35px;
 }
+
 #logIn{
+  /*Расположение самого элемента*/
+  margin-right: 10px;
+  grid-column: 5;
+  /*Расположение внутри элемента*/
+
+  /*Стиль элемента*/
   width: 155px;
 }
+
 #signIn{
+  /*Расположение самого элемента*/
+  grid-column: 6;
+  /*Расположение внутри элемента*/
+
+
+  /*Стиль элемента*/
+  margin-left: 10px ;
   width: 75px;
 }
 
@@ -121,6 +134,7 @@ export default {
   color:white;
   background-color: #1c1c1c;
 }
+
 #h1{
   /*Расположение самого элемента*/
   margin: 10px;
@@ -128,6 +142,7 @@ export default {
   text-align: center;
   font-size: 1.5em;
 }
+
 #main{
   /*Расположение самого элемента*/
   margin: 10px;
