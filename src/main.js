@@ -1,13 +1,11 @@
 import { createApp } from 'vue'
-// import Vue from 'vue'
 import App from './App.vue'
+import router from './router'
 
-createApp(App).mount('body')
+createApp(App).use(router).mount('body')
 
 // App.config.ignoredElements = [/^app-/]
 // App.use(/* ... */)
 // App.mixin(/* ... */)
 // App.component(/* ... */)
 // App.directive(/* ... */)
-
-// App.mount('#app')

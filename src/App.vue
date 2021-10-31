@@ -1,18 +1,11 @@
 <template>
-  <StartPage/>
-<!--  <AuthorizationWindow/>-->
+  <router-view/>
 </template>
 
 <script>
-// import AuthorizationWindow from "@/components/AuthorizationWindow.vue";
-import StartPage from "@/components/StartPage";
 
 export default {
-  name: 'App',
-  components: {
-    StartPage
-    // AuthorizationWindow
-  }
+  name: 'App'
 }
 </script>
 
@@ -20,7 +13,7 @@ export default {
 body{
   margin: 0;
   height: 100vh;
-  background: #0c0c0c;
+  background: #1c1c1c;
 }
 button{
   background: #67204c;
