@@ -2,8 +2,16 @@
 <div id="bg">
   <div id="upLine">ONLYPOSTS</div>
   <div id="buttons">
-    <button id="logIn">Зарегистрироваться</button>
-    <button id="signIn">Войти</button>
+    <button id="logIn">
+      <router-link :to="{name: 'auth', params:{logged: 'Регистрация'}}">
+      Зарегистрироваться
+      </router-link>
+    </button>
+    <button id="signIn">
+      <router-link :to="{name: 'auth', params:{logged: 'Авторизация'}}">
+        Войти
+      </router-link>
+    </button>
   </div>
   <div id="dscr">
     <div id="h1">Что такое ONLYPOSTS?</div>
@@ -20,7 +28,7 @@
 
 <script>
 export default {
-  name: "StartPage"
+  name: "StartPage",
 }
 </script>
 

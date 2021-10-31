@@ -1,7 +1,7 @@
 <template>
   <div id="bg">
     <div id="main">
-        <div id="name">Авторизация</div>
+        <div id="name"> {{logged}} </div>
         <div id="fields">
         <div id="login">
           <div class="fieldName">Имя пользователя</div>
@@ -23,7 +23,13 @@
 
 <script>
     export default {
-        name: "AuthorizationWindow"
+      name: "AuthorizationWindow",
+      props: {
+        logged: {
+          type: String,
+          default: 'Авторизация'
+        }
+      }
     }
 </script>
 
@@ -48,7 +54,7 @@
 
 #main {
     /*Расположение самого элемента*/
-    margin: 40px 0px;
+    margin: 40px 0;
     min-width: 300px;
     border-radius:28px;
     grid-column: 2;
@@ -104,7 +110,7 @@
 
 .input > input{
   /*Расположение самого элемента*/
-  margin: 15px 0px;
+  margin: 15px 0;
 
   /*Расположение внутри элемента*/
   text-indent: 10px;
