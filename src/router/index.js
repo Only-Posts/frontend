@@ -9,17 +9,33 @@ const routes = [
         component: StartPage,
     },
     {
-        path: "/auth",
+        path: "/auth/:logged",
         name: "auth",
         component: AuthorizationWindow,
-        props: true
+        props: true,
+        // children: [
+        //     {
+        //         path: 'signIn',
+        //         component: {
+        //             name: signInName,
+        //             form: signInForm
+        //         }
+        //     },
+        //     {
+        //         path: 'logIn',
+        //         component: {
+        //             name: logInName,
+        //             form: logInForm
+        //         }
+        //     }
+        // ]
     },
 ];
 
 const router = createRouter({
-    mode: 'history',
-    history: createWebHistory(),
     routes,
+    mode: 'history',
+    history: createWebHistory()
 });
 
 export default router;
