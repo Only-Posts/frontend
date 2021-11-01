@@ -1,13 +1,13 @@
 <template>
   <div id="bg">
     <div id="main">
-        <div id="name"> {{logged}} </div>
+        <div id="name"> {{ logged === 'logIn' ? 'Авторизация' : 'Регистрация'}} </div>
         <div id="fields">
         <div id="login">
           <div class="fieldName">Имя пользователя</div>
           <div class="input"><input type="text"></div>
         </div>
-        <div id="email">
+        <div id="email" v-if="logged === 'signIn'">
           <div class="fieldName">Email</div>
           <div class="input"><input type="email"></div>
         </div>
@@ -22,13 +22,17 @@
 </template>
 
 <script>
+
     export default {
       name: "AuthorizationWindow",
       props: {
         logged: {
           type: String,
-          default: 'Авторизация'
+          validator: (prop) => ['signIn', 'logIn'].includes(prop)
         }
+      },
+      beforeCreate() {
+
       }
     }
 </script>

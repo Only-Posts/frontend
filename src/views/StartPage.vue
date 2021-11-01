@@ -2,16 +2,12 @@
 <div id="bg">
   <div id="upLine">ONLYPOSTS</div>
   <div id="buttons">
-    <button id="logIn">
-      <router-link :to="{name: 'auth', params:{logged: 'Регистрация'}}">
+    <router-link tag="li" id="logIn" :to="{name: 'auth', params:{logged: 'signIn'}}">
       Зарегистрироваться
-      </router-link>
-    </button>
-    <button id="signIn">
-      <router-link :to="{name: 'auth', params:{logged: 'Авторизация'}}">
-        Войти
-      </router-link>
-    </button>
+    </router-link>
+    <router-link tag="button" id="signIn" :to="{name: 'auth', params:{logged: 'logIn'}}">
+      Войти
+    </router-link>
   </div>
   <div id="dscr">
     <div id="h1">Что такое ONLYPOSTS?</div>
