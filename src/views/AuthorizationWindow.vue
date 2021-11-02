@@ -7,7 +7,7 @@
           <div class="fieldName">Имя пользователя</div>
           <div class="input"><input type="text"></div>
         </div>
-        <div id="email" v-if="logged === 'signIn'">
+        <div id="email" v-if="logged === 'signUp'">
           <div class="fieldName">Email</div>
           <div class="input"><input type="email"></div>
         </div>
