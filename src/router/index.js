@@ -12,24 +12,8 @@ const routes = [
         path: "/auth/:logged",
         name: "auth",
         component: AuthorizationWindow,
-        props: true,
-        // children: [
-        //     {
-        //         path: 'signIn',
-        //         component: {
-        //             name: signInName,
-        //             form: signInForm
-        //         }
-        //     },
-        //     {
-        //         path: 'logIn',
-        //         component: {
-        //             name: logInName,
-        //             form: logInForm
-        //         }
-        //     }
-        // ]
-    },
+        props: true
+    }
 ];
 
 const router = createRouter({

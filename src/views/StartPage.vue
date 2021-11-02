@@ -2,12 +2,12 @@
 <div id="bg">
   <div id="upLine">ONLYPOSTS</div>
   <div id="buttons">
-    <router-link tag="li" id="logIn" :to="{name: 'auth', params:{logged: 'signIn'}}">
+    <button id="signUp" @click="$router.push({name: 'auth', params:{logged: 'signUp'}})">
       Зарегистрироваться
-    </router-link>
-    <router-link tag="button" id="signIn" :to="{name: 'auth', params:{logged: 'logIn'}}">
+    </button>
+    <button id="logIn" @click="$router.push({name: 'auth', params:{logged: 'logIn'}})">
       Войти
-    </router-link>
+    </button>
   </div>
   <div id="dscr">
     <div id="h1">Что такое ONLYPOSTS?</div>
@@ -102,11 +102,11 @@ export default {
   /*Стиль элемента*/
 }
 
-#logIn, #signIn{
+#logIn, #signUp{
   height: 35px;
 }
 
-#logIn{
+#signUp{
   /*Расположение самого элемента*/
   margin-right: 10px;
   grid-column: 5;
@@ -116,7 +116,7 @@ export default {
   width: 155px;
 }
 
-#signIn{
+#logIn{
   /*Расположение самого элемента*/
   grid-column: 6;
   /*Расположение внутри элемента*/
