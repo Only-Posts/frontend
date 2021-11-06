@@ -16,7 +16,9 @@
           <div class="input"><input type="password"></div>
         </div>
         </div>
-        <div id="enter"><button>Войти</button></div>
+        <div id="enter">
+          <button @click="$router.push({name: 'main'})">Войти</button>
+        </div>
     </div>
   </div>
 </template>
