@@ -2,10 +2,10 @@
 <div id="bg">
   <div id="upLine">ONLYPOSTS</div>
   <div id="buttons">
-    <button id="signUp" @click="$router.push({name: 'auth', params:{logged: 'signUp'}})">
+    <button id="signUp" @click="$router.push('/auth/signIn')">
       Зарегистрироваться
     </button>
-    <button id="logIn" @click="$router.push({name: 'auth', params:{logged: 'logIn'}})">
+    <button id="logIn" @click="$router.push('/auth/logIn')">
       Войти
     </button>
   </div>

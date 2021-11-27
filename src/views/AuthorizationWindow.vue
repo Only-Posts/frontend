@@ -1,24 +1,7 @@
 <template>
   <div id="bg">
     <div id="main">
-        <div id="name"> {{ logged === 'logIn' ? 'Авторизация' : 'Регистрация'}} </div>
-        <div id="fields">
-        <div id="login">
-          <div class="fieldName">Имя пользователя</div>
-          <div class="input"><input type="text"></div>
-        </div>
-        <div id="email" v-if="logged === 'signUp'">
-          <div class="fieldName">Email</div>
-          <div class="input"><input type="email"></div>
-        </div>
-        <div id="password">
-          <div class="fieldName">Пароль</div>
-          <div class="input"><input type="password"></div>
-        </div>
-        </div>
-        <div id="enter">
-          <button @click="$router.push({name: 'main'})">Войти</button>
-        </div>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -26,17 +9,8 @@
 <script>
 
     export default {
-      name: "AuthorizationWindow",
-      props: {
-        logged: {
-          type: String,
-          validator: (prop) => ['signIn', 'logIn'].includes(prop)
-        }
-      },
-      beforeCreate() {
-
+      name: "AuthorizationWindow"
       }
-    }
 </script>
 
 <style scoped>
@@ -54,7 +28,7 @@
   /*Стиль элемента*/
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../assets/authBG.png");
+  background-image: url("../assets/backgrounds/authBG.png");
   background-position: center;
 }
 
@@ -74,119 +48,6 @@
     /*Стиль элемента*/
     background: rgba(251,251,251,0.12);
     backdrop-filter: blur(18px);
-}
-
-#name{
-    /*Расположение самого элемента*/
-    grid-column: 1;
-    grid-row: 1;
-    /*margin: 50px 50px 10px 50px;*/ /*Возможно не нужно*/
-
-
-    /*Расположение внутри элемента*/
-    display: grid;
-    align-items: end;
-    justify-items: center;
-
-
-    /*Стиль элемента*/
-    /*background: #0c0c0c;*/ /*Возможно не нужно*/
-    font-size: 2.5em;
-    color:white;
-}
-
-#fields{
-  /*Расположение самого элемента*/
-  margin: 30px;
-  grid-column: 1;
-  grid-row: 2;
-
-  /*Расположение внутри элемента*/
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-
-  /*Стиль элемента*/
-}
-
-  /*Общие параметры*/
-.fieldName{
-  color: white;
-}
-
-.input > input{
-  /*Расположение самого элемента*/
-  margin: 15px 0;
-
-  /*Расположение внутри элемента*/
-  text-indent: 10px;
-
-
-  /*Стиль элемента*/
-  width: 100%;
-  height: 42px;
-  background-color: rgba(251,251,251,0);
-  border: solid 2px rgba(251,251,251,0.12);
-  border-radius: 20px;
-  outline: none;
-  color: rgb(251,251,251);
-}
-
-  /*Часные параметры*/
-#login{
-  /*Расположение самого элемента*/
-  grid-column: 1;
-  grid-row: 1;
-
-  /*Расположение внутри элемента*/
-
-
-  /*Стиль элемента*/
-}
-
-#email{
-  /*Расположение самого элемента*/
-  grid-column: 1;
-  grid-row: 2;
-
-  /*Расположение внутри элемента*/
-
-
-  /*Стиль элемента*/
-}
-
-#password{
-  /*Расположение самого элемента*/
-  grid-column: 1;
-  grid-row: 3;
-
-  /*Расположение внутри элемента*/
-
-
-  /*Стиль элемента*/
-}
-
-#enter{
-    /*Расположение самого элемента*/
-    grid-column: 1;
-    grid-row: 3;
-    margin: 10px 25px 50px 50px;
-
-    /*Расположение внутри элемента*/
-    display: grid;
-    align-items: start;
-    justify-items: end;
-
-
-    /*Стиль элемента*/
-
-}
-
-#enter > button{
-    /*Стиль элемента*/
-    width: 115px;
-    height: 45px;
-
 }
 
 </style>

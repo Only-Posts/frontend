@@ -4,22 +4,43 @@
   <div id="menu">
     <div id="bars">
       <div id="upBar">
-        <div id="profile"></div>
-        <div id="time"></div>
-        <div id="theme"></div>
-        <div id="help"></div>
+        <div id="profile">
+          <img src="../assets/icons/profileIC.png" @click="say()">
+        </div>
+        <div id="time">
+          <img src="../assets/icons/historyIC.png" @click="say()">
+        </div>
+        <div id="theme">
+          <img src="../assets/icons/themeIC.png" @click="say()">
+        </div>
+        <div id="help">
+          <img src="../assets/icons/helpIC.png" @click="say()">
+        </div>
       </div>
-    <div id="lang"></div>
+    <div id="lang">
+      <img src="../assets/icons/ruIC.png"  @click="say()">
+    </div>
   </div>
   <div id="dscr"></div>
   </div>
-  <div id="post"></div>
+  <div id="post">
+    <textarea></textarea>
+    <div id="form">
+      <div id="media"></div>
+      <button id="submit">Опубликовать</button>
+    </div>
+  </div>
 </div>
 </template>
 
 <script>
 export default {
-  name: "MainPage"
+  name: "MainPage",
+  methods: {
+    say: function(){
+      console.log('hi')
+    }
+  }
 }
 </script>
 
@@ -40,7 +61,7 @@ export default {
   color:white;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../assets/mainBG.png");
+  background-image: url("../assets/backgrounds/mainBG.png");
   background-position: center;
   background-color: #1c1c1c;
 }
@@ -48,22 +69,22 @@ export default {
   /*Расположение самого элемента*/
   grid-column: 1;
   grid-row: 1;
-  margin: 30px 23px;
-  height: 90%;
+  margin: 58px 5px 58px 40px;
+  max-width: 60px;
 
   /*Расположение внутри элемента*/
 
 
   /*Стиль элемента*/
   border-radius: 30px;
-  background-color: rgb(115,30,82);
+  background-color: rgb(95,30,82);
 }
 
 #menu{
   /*Расположение самого элемента*/
   grid-row: 1;
   grid-column: 1 / 3;
-  margin: 25px 10px;
+  margin: 50px 20px;
 
   /*Расположение внутри элемента*/
   display: grid;
@@ -71,14 +92,17 @@ export default {
   grid-template-rows: 1fr;
 
   /*Стиль элемента*/
-  background: rgba(251,251,251,0.12);
+  background: rgba(212,151,188,0.13);
   backdrop-filter: blur(18px);
   border-radius: 30px;
-  TODO: проверить как будет выглядеть на чистовике склееные блоки
 }
 
 #bars{
   /*Расположение самого элемента*/
+  margin-top: 20px;
+  margin-left: 2px;
+  max-width: 95px;
+  min-width: 60px;
 
   /*Расположение внутри элемента*/
   display: grid;
@@ -86,6 +110,7 @@ export default {
   grid-template-columns: 1fr;
 
   /*Стиль элемента*/
+  /*background: #1c1c1c;*/
 }
 
 #upBar{
@@ -93,14 +118,16 @@ export default {
   grid-row: 1;
   grid-column: 1;
 
+
   /*Расположение внутри элемента*/
   display: grid;
+  justify-items: center;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(auto-fit, 70px);
 
   /*Стиль элемента*/
-
 }
+
 
 #lang{
   /*Расположение самого элемента*/
@@ -109,10 +136,12 @@ export default {
 
   /*Расположение внутри элемента*/
   display: grid;
+  margin-bottom: 10px;
+  justify-items: center;
+  align-items: end;
 
 
   /*Стиль элемента*/
-  background-color: white;
 }
 
 #profile{
@@ -124,7 +153,6 @@ export default {
 
 
   /*Стиль элемента*/
-  background-color: white;
 }
 
 #time{
@@ -136,7 +164,6 @@ export default {
 
 
   /*Стиль элемента*/
-  background-color: blue;
 }
 
 #theme{
@@ -148,7 +175,6 @@ export default {
 
 
   /*Стиль элемента*/
-  background-color: white;
 }
 
 #help{
@@ -160,7 +186,6 @@ export default {
 
 
   /*Стиль элемента*/
-  background-color: blue;
 }
 
 #dscr{
@@ -179,15 +204,66 @@ export default {
   /*Расположение самого элемента*/
   grid-column: 3;
   grid-row: 1;
-  margin: 25px 50px 25px 50px;
+  margin: 50px 75px;
+
+  /*Расположение внутри элемента*/
+  display: grid;
+  grid-template-rows: 7fr 1fr;
+  grid-template-columns: 1fr;
+
+  /*Стиль элемента*/
+  border-radius: 30px;
+  background: rgba(212,151,188,0.13);
+  backdrop-filter: blur(18px);
+}
+
+textarea{
+  /*Расположение самого элемента*/
+  margin: 35px;
+
+  /*Расположение внутри элемента*/
+
+  /*Стиль элемента*/
+  background: #ffffff;
+  border-radius: 20px;
+  outline: none;
+  resize: none;
+  padding: 10px;
+}
+
+#form{
+  /*Расположение самого элемента*/
+  grid-row: 2;
+  grid-column: 1;
+
+  /*Расположение внутри элемента*/
+  display:grid;
+  grid-template-columns: repeat(9, 100px);
+  grid-template-rows: 1fr;
+
+  /*Стиль элемента*/
+}
+
+#media{
+  /*Расположение самого элемента*/
+
 
   /*Расположение внутри элемента*/
 
 
   /*Стиль элемента*/
-  border-radius: 30px;
-  background: rgba(251,251,251,0.12);
-  backdrop-filter: blur(18px);
+}
+
+#submit{
+  /*Расположение самого элемента*/
+  grid-column: 9;
+
+  /*Расположение внутри элемента*/
+
+
+  /*Стиль элемента*/
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 </style>

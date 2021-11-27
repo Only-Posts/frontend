@@ -2,6 +2,8 @@ import { createWebHistory, createRouter } from "vue-router";
 import StartPage from "@/views/StartPage";
 import AuthorizationWindow from "@/views/AuthorizationWindow";
 import MainPage from "@/views/MainPage";
+import SignIn from "@/components/SignIn";
+import LogIn from "@/components/LogIn";
 
 const routes = [
     {
@@ -10,10 +12,19 @@ const routes = [
         component: StartPage,
     },
     {
-        path: "/auth/:logged",
+        path: "/auth",
         name: "auth",
         component: AuthorizationWindow,
-        props: true
+        children: [
+            {
+                path: "/auth/signIn",
+                component: SignIn,
+            },
+            {
+                path: "/auth/logIn",
+                component: LogIn
+            }
+        ]
     },
     // TODO: в зависимости от выбора кнопки отобрать компонент авторизации или регистрации
     {
