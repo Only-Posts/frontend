@@ -1,9 +1,10 @@
 <template>
+  <form @submit.prevent="login">
   <div id="name"> Авторизация </div>
   <div id="fields">
     <div id="login">
       <div class="fieldName"> Имя пользователя </div>
-      <div class="input"><input v-model="login" type="text"/></div>
+      <div class="input"><input v-model="username" type="text"/></div>
     </div>
     <div id="password">
       <div class="fieldName">Пароль</div>
@@ -11,23 +12,51 @@
     </div>
   </div>
   <div id="enter">
-    <button @click="$router.push({name: 'main'})">Войти</button>
+    <button type="submit" >Войти</button>
   </div>
+  </form>
 </template>
 
 <script>
+import axios from 'axios'
+
+
 export default {
   name: "LogIn",
   data (){
     return{
-      login:'',
+      username:'',
       password:''
     }
+  },
+  methods:{
+    login: function() {
+      const payload = {username:this.username, password: this.password}
+      console.log(payload)
+
+      axios.post("http://localhost:8080/user/login", payload)
+      .then(() => {
+        this.router.push({name: 'main'})
+      })
+      .catch(error => {
+      console.log("There was an error!", error)
+      })
+      }
   }
 }
 </script>
 
 <style scoped>
+form{
+  /*Расположение самого элемента*/
+  height: 100vh;
+  /*Расположение внутри элемента*/
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+
+}
+
 #name{
   /*Расположение самого элемента*/
   grid-column: 1;

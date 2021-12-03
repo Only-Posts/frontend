@@ -26,14 +26,17 @@ const routes = [
             }
         ]
     },
-    // TODO: в зависимости от выбора кнопки отобрать компонент авторизации или регистрации
     {
         path: "/main",
         name: "main",
         component: MainPage,
-        props: true
-    }
-//    TODO: добавлять в путь идентификатор пользователя в качестве пропа
+        props: true,
+        meta: {isAuthenticated: true},
+        // beforeEnter: (to, from, next) => {
+        //     if (!isAuthenticated) next({ name: 'Login' })
+        //     else next()
+        // } TODO: перед переходом вызывать йункцию с проверкой авторизации пользователя
+    },
 ];
 
 const router = createRouter({

@@ -23,13 +23,13 @@
   </div>
   <div id="dscr"></div>
   </div>
-  <div id="post">
+  <form id="post" @submit.prevent="makePost">
     <textarea></textarea>
-    <div id="form">
+    <div id="buttons">
       <div id="media"></div>
-      <button id="submit">Опубликовать</button>
+      <button id="submit" type="submit">Опубликовать</button>
     </div>
-  </div>
+  </form>
 </div>
 </template>
 
@@ -48,13 +48,13 @@ export default {
 #bg{
   /*Расположение самого элемента*/
   height: 100vh;
-  min-width: 1000px;
+  min-width: 1080px;
   min-height: 600px;
   margin: 0;
 
   /*Расположение внутри элемента*/
   display: grid;
-  grid-template-columns: 1fr 4fr 9fr;
+  grid-template-columns: repeat(auto-fill, 100px);
   grid-template-rows: 1fr;
 
   /*Стиль элемента*/
@@ -67,7 +67,7 @@ export default {
 }
 #backline{
   /*Расположение самого элемента*/
-  grid-column: 1;
+  grid-column: 1/2;
   grid-row: 1;
   margin: 58px 5px 58px 40px;
   max-width: 60px;
@@ -83,7 +83,7 @@ export default {
 #menu{
   /*Расположение самого элемента*/
   grid-row: 1;
-  grid-column: 1 / 3;
+  grid-column: 1 / 7;
   margin: 50px 20px;
 
   /*Расположение внутри элемента*/
@@ -202,7 +202,8 @@ export default {
 
 #post{
   /*Расположение самого элемента*/
-  grid-column: 3;
+  grid-column: 7/100;
+
   grid-row: 1;
   margin: 50px 75px;
 
@@ -224,6 +225,7 @@ textarea{
   /*Расположение внутри элемента*/
 
   /*Стиль элемента*/
+
   background: #ffffff;
   border-radius: 20px;
   outline: none;
@@ -231,14 +233,14 @@ textarea{
   padding: 10px;
 }
 
-#form{
+#buttons{
   /*Расположение самого элемента*/
   grid-row: 2;
   grid-column: 1;
 
   /*Расположение внутри элемента*/
   display:grid;
-  grid-template-columns: repeat(9, 100px);
+  grid-template-columns: repeat(auto-fit, 100px);
   grid-template-rows: 1fr;
 
   /*Стиль элемента*/
@@ -256,13 +258,14 @@ textarea{
 
 #submit{
   /*Расположение самого элемента*/
-  grid-column: 9;
+  grid-column: 30;
 
   /*Расположение внутри элемента*/
 
 
   /*Стиль элемента*/
   margin-top: 30px;
+  margin-right: 30px;
   margin-bottom: 30px;
 }
 

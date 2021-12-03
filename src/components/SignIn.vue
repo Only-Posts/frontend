@@ -1,31 +1,69 @@
 <template>
+  <form @submit.prevent="signin">
   <div id="name"> Регистрация </div>
   <div id="fields">
     <div id="login">
       <div class="fieldName">Имя пользователя</div>
-      <div class="input"><input type="text"></div>
+      <div class="input"><input v-model="username" type="text"></div>
     </div>
     <div id="email">
       <div class="fieldName">Email</div>
-      <div class="input"><input type="email"></div>
+      <div class="input"><input v-model="email" type="email"></div>
     </div>
     <div id="password">
       <div class="fieldName">Пароль</div>
-      <div class="input"><input type="password"></div>
+      <div class="input"><input v-model="password" type="password"></div>
     </div>
   </div>
   <div id="enter">
     <button @click="$router.push({name: 'main'})">Войти</button>
   </div>
+  </form>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  name: "SignIn"
+  name: "SignIn",
+  data (){
+    return{
+      username:'',
+      email: '',
+      password:''
+    }
+  },
+  methods:{
+    login: function() {
+      const payload = {username:this.username, password: this.password}
+      console.log(payload)
+
+      axios.post("http://localhost:8080/user/signup", payload)
+          .catch(error => {
+            console.log("There was an error!", error)
+          })
+
+      // let results
+      //
+      // axios.get("http://localhost:8080/user/signup")
+      // .then(responce => results = responce)
+    }
+  }
 }
+
 </script>
 
 <style scoped>
+form{
+  /*Расположение самого элемента*/
+  height: 100vh;
+  /*Расположение внутри элемента*/
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+
+}
+
 #name{
   /*Расположение самого элемента*/
   grid-column: 1;

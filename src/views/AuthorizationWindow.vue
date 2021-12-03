@@ -36,6 +36,7 @@
     /*Расположение самого элемента*/
     margin: 40px 0;
     min-width: 300px;
+    max-width: 470px;
     border-radius:28px;
     grid-column: 2;
     grid-row: 1/4;
