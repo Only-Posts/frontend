@@ -56,7 +56,7 @@ export default {
 <style scoped>
 form{
   /*Расположение самого элемента*/
-  height: 100vh;
+  height: 90vh;
   /*Расположение внутри элемента*/
   display: grid;
   grid-template-columns: 1fr;

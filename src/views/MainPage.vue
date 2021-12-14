@@ -47,9 +47,9 @@ export default {
 <style scoped>
 #bg{
   /*Расположение самого элемента*/
-  height: 100vh;
   min-width: 1080px;
   min-height: 600px;
+  height: 100vh;
   margin: 0;
 
   /*Расположение внутри элемента*/
@@ -63,7 +63,6 @@ export default {
   background-size: cover;
   background-image: url("../assets/backgrounds/mainBG.png");
   background-position: center;
-  background-color: #1c1c1c;
 }
 #backline{
   /*Расположение самого элемента*/
@@ -100,7 +99,6 @@ export default {
 #bars{
   /*Расположение самого элемента*/
   margin-top: 20px;
-  margin-left: 2px;
   max-width: 95px;
   min-width: 60px;
 
@@ -123,7 +121,7 @@ export default {
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, 70px);
+  grid-template-rows: repeat(5, 70px);
 
   /*Стиль элемента*/
 }
@@ -203,8 +201,8 @@ export default {
 #post{
   /*Расположение самого элемента*/
   grid-column: 7/100;
-
   grid-row: 1;
+  min-height: 500px;
   margin: 50px 75px;
 
   /*Расположение внутри элемента*/
@@ -264,6 +262,7 @@ textarea{
 
 
   /*Стиль элемента*/
+  height: 50px;
   margin-top: 30px;
   margin-right: 30px;
   margin-bottom: 30px;
