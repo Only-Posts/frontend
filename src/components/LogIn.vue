@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 
 export default {
@@ -34,13 +33,17 @@ export default {
       const payload = {username:this.username, password: this.password}
       console.log(payload)
 
-      axios.post("http://localhost:8080/user/login", payload)
-      .then(() => {
-        this.router.push({name: 'main'})
-      })
-      .catch(error => {
-      console.log("There was an error!", error)
-      })
+      this.$store.dispatch('login', payload)
+      .then(() => this.$router.push('/main'))
+      .catch(err => console.log(err))
+
+      // axios.post("http://localhost:8080/user/login", payload)
+      // .then(() => {
+      //   this.router.push({name: 'main'})
+      // })
+      // .catch(error => {
+      // console.log("There was an error!", error)
+      // })
       }
   }
 }

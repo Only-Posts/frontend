@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="signin">
+  <form @submit.prevent="signup">
   <div id="name"> Регистрация </div>
   <div id="fields">
     <div id="login">
@@ -16,13 +16,12 @@
     </div>
   </div>
   <div id="enter">
-    <button @click="$router.push({name: 'main'})">Войти</button>
+    <button>Войти</button>
   </div>
   </form>
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
   name: "SignIn",
@@ -34,14 +33,18 @@ export default {
     }
   },
   methods:{
-    login: function() {
-      const payload = {username:this.username, password: this.password}
+    signup: function() {
+      // this.$router.push({name: 'main'})
+      const payload = {email:this.email, username:this.username, password: this.password}
       console.log(payload)
+      this.$store.dispatch('register', payload)
+          .then(() => this.$router.push('/'))
+          .catch(err => console.log(err))
 
-      axios.post("http://localhost:8080/user/signup", payload)
-          .catch(error => {
-            console.log("There was an error!", error)
-          })
+      // axios.post("http://localhost:8080/user/signup", payload)
+      //     .catch(error => {
+      //       console.log("There was an error!", error)
+      //     })
 
       // let results
       //
