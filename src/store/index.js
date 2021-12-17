@@ -33,7 +33,6 @@ const store = createStore({
                         const status = resp.data.status
                         if (status == "success") {
                             commit('auth_success', user)
-                            this.$router.push('/main')
                         }
                         else {
                             commit('auth_error', user)
@@ -55,7 +54,6 @@ const store = createStore({
                         const status = resp.data.status
                         if (status == "success") {
                             commit('auth_success', user)
-                            this.$router.push('/main')
                         }
                         else {
                             commit('auth_error', user)
