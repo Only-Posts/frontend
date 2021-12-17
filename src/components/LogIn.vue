@@ -32,6 +32,8 @@ export default {
       const user = {username: this.username, password: this.password}
 
       this.$store.dispatch('login', user)
+          .then(status => {
+            if (status === "success") this.$router.push('/main')})
     }
   }
 }

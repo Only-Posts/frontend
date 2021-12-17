@@ -39,6 +39,8 @@ export default {
       const user = {email:this.email, username:this.username, password: this.password}
 
       this.$store.dispatch('register', user)
+          .then(status => {
+            if (status === "success") this.$router.push('/main')})
     }
   }
 }

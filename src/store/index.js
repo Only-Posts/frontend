@@ -17,13 +17,11 @@ const store = createStore({
                         if (status === "success") {
 
                             commit('auth_success', user)
-                            this.$router.push('/main')
                         }
                         else {
-                            console.log(user)
                             commit('auth_error', user)
                         }
-                        resolve(resp)
+                        resolve(status)
                     })
                     .catch(err => {
                         commit('auth_error')
@@ -38,14 +36,12 @@ const store = createStore({
                         // const msg = resp.data.message
                         const status = resp.data.status
                         if (status === "success") {
-
                             commit('auth_success', user)
-                            this.$router.push('/main')
                         }
                         else {
                             commit('auth_error', user)
                         }
-                        resolve(resp)
+                        resolve(status)
                     })
                     .catch(err => {
                         commit('auth_error', err)
