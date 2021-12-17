@@ -5,23 +5,28 @@
     <div id="bars">
       <div id="upBar">
         <div id="profile">
-          <img src="../assets/icons/profileIC.png" @click="say()">
+          <img src="../assets/icons/profileIC.png" @click="$router.push({name:'profile'})">
         </div>
         <div id="time">
-          <img src="../assets/icons/historyIC.png" @click="say()">
+          <img src="../assets/icons/historyIC.png" @click="$router.push({name:'history'})">
         </div>
         <div id="theme">
           <img src="../assets/icons/themeIC.png" @click="say()">
         </div>
         <div id="help">
-          <img src="../assets/icons/helpIC.png" @click="say()">
+          <img src="../assets/icons/helpIC.png" @click="$router.push({name:'help'})">
         </div>
       </div>
-    <div id="lang">
+      <div id="lang">
       <img src="../assets/icons/ruIC.png"  @click="say()">
     </div>
-  </div>
-  <div id="dscr"></div>
+    </div>
+    <div id="dscr">
+      <router-view></router-view>
+    </div>
+    <div id="back">
+      <img src="../assets/icons/backIC.png" @click="say()">
+    </div>
   </div>
   <form id="post" @submit.prevent="makePost">
     <textarea></textarea>
@@ -82,12 +87,12 @@ export default {
 #menu{
   /*Расположение самого элемента*/
   grid-row: 1;
-  grid-column: 1 / 7;
+  grid-column: 1 / 8;
   margin: 50px 20px;
 
   /*Расположение внутри элемента*/
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 4fr 35px;
   grid-template-rows: 1fr;
 
   /*Стиль элемента*/
@@ -198,9 +203,22 @@ export default {
   /*Стиль элемента*/
 }
 
+#back{
+  /*Расположение самого элемента*/
+  grid-row: 1;
+  grid-column: 3;
+  height: 100%;
+
+  /*Расположение внутри элемента*/
+  display: grid;
+  align-items: center;
+
+  /*Стиль элемента*/
+}
+
 #post{
   /*Расположение самого элемента*/
-  grid-column: 7/100;
+  grid-column: 8/100;
   grid-row: 1;
   min-height: 500px;
   margin: 50px 75px;

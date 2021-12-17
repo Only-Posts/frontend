@@ -16,7 +16,7 @@
     </div>
   </div>
   <div id="enter">
-    <button>Войти</button>
+    <button type="submit">Войти</button>
   </div>
   </form>
 </template>
@@ -34,12 +34,12 @@ export default {
   },
   methods:{
     signup: function() {
-      // this.$router.push({name: 'main'})
-      const user = {email:this.email, username:this.username, password: this.password}
-      console.log(user)
-      this.$store.dispatch('register', user)
-          .then(() => this.$router.push('/main'))
-          .catch(err => console.log(err))
+      this.$router.push({name: 'main'})
+      // const user = {email:this.email, username:this.username, password: this.password}
+      // console.log(user)
+      // this.$store.dispatch('register', user)
+      //     .then(() => this.$router.push('/main'))
+      //     .catch(err => console.log(err))
     }
   }
 }
