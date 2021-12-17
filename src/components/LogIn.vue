@@ -19,24 +19,20 @@
 
 <script>
 
-
 export default {
   name: "LogIn",
-  data (){
-    return{
-      username:'',
-      password:''
+  data() {
+    return {
+      username: '',
+      password: '',
     }
   },
-  methods:{
-    login: function() {
-      const user = {username:this.username, password: this.password}
-      console.log(user)
+  methods: {
+    login: function () {
+      const user = {username: this.username, password: this.password}
 
       this.$store.dispatch('login', user)
-      .then(() => this.$router.push('/main'))
-      .catch(err => console.log(err))
-      }
+    }
   }
 }
 </script>

@@ -23,6 +23,7 @@
 
 <script>
 
+
 export default {
   name: "SignIn",
   data (){
@@ -34,12 +35,10 @@ export default {
   },
   methods:{
     signup: function() {
-      this.$router.push({name: 'main'})
-      // const user = {email:this.email, username:this.username, password: this.password}
-      // console.log(user)
-      // this.$store.dispatch('register', user)
-      //     .then(() => this.$router.push('/main'))
-      //     .catch(err => console.log(err))
+      // this.$router.push({name: 'main'})
+      const user = {email:this.email, username:this.username, password: this.password}
+
+      this.$store.dispatch('register', user)
     }
   }
 }

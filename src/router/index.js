@@ -1,5 +1,5 @@
 import { createWebHistory, createRouter } from "vue-router";
-// import store from "../store/index.js"
+import store from "../store/index.js"
 import StartPage from "@/views/StartPage";
 import AuthorizationWindow from "@/views/AuthorizationWindow";
 import MainPage from "@/views/MainPage";
@@ -60,15 +60,15 @@ const router = createRouter({
     mode: 'history',
     history: createWebHistory()
 });
-// router.beforeEach((to, from, next) => {
-//     if(to.matched.some(record => record.meta.requiresAuth)) {
-//         if (store.getters.isLoggedIn) {
-//             next()
-//             return
-//         }
-//         next('/')
-//     } else {
-//         next()
-//     }
-// })
+router.beforeEach((to, from, next) => {
+    if(to.matched.some(record => record.meta.requiresAuth)) {
+        if (store.getters.authStatus) {
+            next()
+            return
+        }
+        next('/')
+    } else {
+        next()
+    }
+})
 export default router;

@@ -15,6 +15,10 @@
         <input class="field" type="password" v-model="password"/>
       </div>
       <button type="submit">Редактировать</button>
+      <div class="point">
+        <div class="name">Управление аккаунтами</div>
+        <button>Редактировать</button>
+      </div>
     </form>
   </div>
 </template>
