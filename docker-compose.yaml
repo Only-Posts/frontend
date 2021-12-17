@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  front:
+    build:
+      context: .
+      dockerfile: front.Dockerfile
+    ports:
+      - "80:8080"
