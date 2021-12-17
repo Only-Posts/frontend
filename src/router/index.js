@@ -66,7 +66,7 @@ router.beforeEach((to, from, next) => {
             next()
             return
         }
-        next('/')
+        next('/main')
     } else {
         next()
     }
