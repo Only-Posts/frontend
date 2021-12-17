@@ -30,20 +30,12 @@ export default {
   },
   methods:{
     login: function() {
-      const payload = {username:this.username, password: this.password}
-      console.log(payload)
+      const user = {username:this.username, password: this.password}
+      console.log(user)
 
-      this.$store.dispatch('login', payload)
+      this.$store.dispatch('login', user)
       .then(() => this.$router.push('/main'))
       .catch(err => console.log(err))
-
-      // axios.post("http://localhost:8080/user/login", payload)
-      // .then(() => {
-      //   this.router.push({name: 'main'})
-      // })
-      // .catch(error => {
-      // console.log("There was an error!", error)
-      // })
       }
   }
 }

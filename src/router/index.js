@@ -33,10 +33,6 @@ const routes = [
         component: MainPage,
         props: true,
         meta: {requiresAuth: true},
-        // beforeEnter: (to, from, next) => {
-        //     if (!isAuthenticated) next({ name: 'Login' })
-        //     else next()
-        // } TODO: перед переходом вызывать йункцию с проверкой авторизации пользователя
     },
 ];
 

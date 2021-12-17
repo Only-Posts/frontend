@@ -35,21 +35,11 @@ export default {
   methods:{
     signup: function() {
       // this.$router.push({name: 'main'})
-      const payload = {email:this.email, username:this.username, password: this.password}
-      console.log(payload)
-      this.$store.dispatch('register', payload)
-          .then(() => this.$router.push('/'))
+      const user = {email:this.email, username:this.username, password: this.password}
+      console.log(user)
+      this.$store.dispatch('register', user)
+          .then(() => this.$router.push('/main'))
           .catch(err => console.log(err))
-
-      // axios.post("http://localhost:8080/user/signup", payload)
-      //     .catch(error => {
-      //       console.log("There was an error!", error)
-      //     })
-
-      // let results
-      //
-      // axios.get("http://localhost:8080/user/signup")
-      // .then(responce => results = responce)
     }
   }
 }

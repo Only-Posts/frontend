@@ -5,7 +5,6 @@ const store = createStore({
     state() {
         return {
             status: '',
-            token: localStorage.getItem('token') || '',
             user: {}
         }
     },
@@ -13,9 +12,8 @@ const store = createStore({
         auth_request(state){
             state.status = 'loading'
         },
-        auth_success(state, token, user){
+        auth_success(state, user){
             state.status = 'success'
-            state.token = token
             state.user = user
         },
         auth_error(state){
@@ -23,8 +21,7 @@ const store = createStore({
         },
         logout(state){
             state.status = ''
-            state.token = ''
-        },
+        }
     },
     actions: {
         login({commit}, user){
@@ -32,16 +29,19 @@ const store = createStore({
                 commit('auth_request')
                 axios({url: 'http://localhost:8080/user/login', data: user, method: 'POST' })
                     .then(resp => {
-                        const token = resp.data.token
-                        const user = resp.data.user
-                        localStorage.setItem('token', token)
-                        axios.defaults.headers.common['Authorization'] = token
-                        commit('auth_success', token, user)
+                        // const msg = resp.data.message
+                        const status = resp.data.status
+                        if (status == "success") {
+                            commit('auth_success', user)
+                            this.$router.push('/main')
+                        }
+                        else {
+                            commit('auth_error', user)
+                        }
                         resolve(resp)
                     })
                     .catch(err => {
                         commit('auth_error')
-                        localStorage.removeItem('token')
                         reject(err)
                     })
             })
@@ -51,16 +51,19 @@ const store = createStore({
                 commit('auth_request')
                 axios({url: 'http://localhost:8080/user/signup', data: user, method: 'POST' })
                     .then(resp => {
-                        const token = resp.data.token
-                        const user = resp.data.user
-                        localStorage.setItem('token', token)
-                        axios.defaults.headers.common['Authorization'] = token
-                        commit('auth_success', token, user)
+                        // const msg = resp.data.message
+                        const status = resp.data.status
+                        if (status == "success") {
+                            commit('auth_success', user)
+                            this.$router.push('/main')
+                        }
+                        else {
+                            commit('auth_error', user)
+                        }
                         resolve(resp)
                     })
                     .catch(err => {
                         commit('auth_error', err)
-                        localStorage.removeItem('token')
                         reject(err)
                     })
             })
