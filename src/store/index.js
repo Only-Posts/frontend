@@ -70,8 +70,7 @@ const store = createStore({
         }
     },
     getters: {
-        isLoggedIn: state => !!state.token,
-        authStatus: state => state.status,
+        authStatus: state => state.status
     }
 });
 

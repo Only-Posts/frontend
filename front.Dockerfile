@@ -18,4 +18,6 @@ COPY . .
 # собираем приложение для production с минификацией
 RUN npm run build
 
+EXPOSE 80
+
 CMD [ "http-server", "dist" ]
