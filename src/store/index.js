@@ -5,6 +5,11 @@ const store = createStore({
     state() {
         return {
             status: '',
+            user: {
+                username: '',
+                email: '',
+                password: ''
+            }
         }
     },
     actions:{
@@ -12,14 +17,15 @@ const store = createStore({
             return new Promise((resolve, reject) => {
                 axios({url: 'http://localhost:8080/user/login', data: user, method: 'POST' })
                     .then(resp => {
-                        // const msg = resp.data.message
+                        const msg = resp.data.message
                         const status = resp.data.status
                         if (status === "success") {
-
-                            commit('auth_success', user)
+                            commit('edit_user_data', user)
+                            commit('auth_success')
                         }
                         else {
-                            commit('auth_error', user)
+                            alert(msg)
+                            commit('auth_error')
                         }
                         resolve(status)
                     })
@@ -33,13 +39,15 @@ const store = createStore({
             return new Promise((resolve, reject) => {
                 axios({url: 'http://localhost:8080/user/signup', data: user, method: 'POST' })
                     .then(resp => {
-                        // const msg = resp.data.message
+                        const msg = resp.data.message
                         const status = resp.data.status
                         if (status === "success") {
+                            commit('edit_user_data', user)
                             commit('auth_success', user)
                         }
                         else {
-                            commit('auth_error', user)
+                            alert(msg)
+                            commit('auth_error')
                         }
                         resolve(status)
                     })
@@ -56,10 +64,16 @@ const store = createStore({
         },
         auth_error(state) {
             state.status = 'error'
+        },
+        edit_user_data(state, userdata){
+            state.user.username = userdata.username
+            state.user.email = userdata.email
+            state.user.password = userdata.password
         }
     },
     getters: {
         authStatus: state => state.status,
+        userData: state => state.user
     }
 });
 

@@ -1,5 +1,5 @@
 <template>
-  <div> дэбил?</div>
+  <div>Какой хелп, нету хелпа</div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div> дэбил история</div>
+  <div>Недоступно на данной версии проекта</div>
 </template>
 
 <script>
